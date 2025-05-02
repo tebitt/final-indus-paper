@@ -21,6 +21,10 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{ni_vbai}
+N.~Instruments, \emph{Vision Builder for Automated Inspection}, 2024,
+  \url{https://www.ni.com/en/support/downloads/software-products/download.vision-builder-for-automated-inspection.html}.
+
 \bibitem{robotics12030071}
 \BIBentryALTinterwordspacing
 A.~Raviola, R.~Guida, A.~C. Bertolino, A.~De~Martin, S.~Mauro, and M.~Sorli,

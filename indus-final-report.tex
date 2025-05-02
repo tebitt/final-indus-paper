@@ -16,8 +16,9 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage[a4paper, top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
-
 \setcounter{secnumdepth}{4}
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
@@ -49,10 +50,14 @@
     \begin{center}
         \item\section*{Abstract}
     \end{center}
-    \large
+    \large This report documents the development of an autonomous pick-and-place robotic system created as a term project for the Industrial Robots course. The system integrates a Universal Robots UR3 robotic arm with National Instruments’ Vision Builder software to detect, track, and retrieve boxes from a moving conveyor belt. Real-time communication between components is facilitated using TCP/IP sockets, while a Python-based control framework synchronizes the vision system, robotic arm, gripper, and conveyor belt. Key features include predictive positioning to account for system delays, adaptive gripper control based on object dimensions, and precise coordination across hardware and software. The system achieved the fastest picking performance among all groups at 2.7 seconds, demonstrating the practical effectiveness of robotics and vision integration in industrial automation.
+    
     \begin{center}
         \item\section*{Keyword}
     \end{center}
+    \textit{Industrial automation, UR3 robotic arm, computer vision, pick-and-place robot, TCP/IP communication, NI Vision Builder, predictive control, real-time systems, robotic integration, conveyor belt tracking.}
+
+
     
 \end{titlepage}
 \newpage
@@ -60,7 +65,7 @@
 
 \newpage
 \section{Introduction}
-\newpage
+The integration of robotics and computer vision is increasingly vital in industrial automation, enhancing productivity. This report presents a detailed overview and analysis of our term project on Industrial Robots, “Pick Up Box,” an autonomous robotic system designed to pick objects from a moving conveyor belt. Employing the Universal Robots’ UR3 robotic arm coupled with the National Instruments’ Vision Builder software, the system reliably detects, tracks, and manipulates boxes positioned on the conveyor. The primary objective is to demonstrate the quick and efficient pick of a box through real-time coordination between the robotic arm and the vision system. This report elaborates on the system specifications, methodologies, TCP/IP communication, software architecture, and performance considerations.
 \section{Specifications}
 In this project, a robotic arm is tasked with detecting and picking up one of two boxes as they move slowly along a conveyor belt. The system uses a camera to detect the presence of a box, after which the robot automatically grabs it. The robotic arm starts at the midpoint of the conveyor belt, with its base coordinates defined in Table \ref{tab:specs}.
 
@@ -113,9 +118,69 @@ By adopting this architecture, developers can interface with the UR3 and externa
 
 \newpage
 \section{Vision Builder}
+NI Vision Builder is a software tool developed by National Instruments (NI) \cite{ni_vbai}. It is used to create and run machine vision applications without writing code. It provides a step-by-step, menu-based interface to help users build vision inspection systems quickly. For our project, we use NI Vision Builder 2019 to manage our box detection pipeline before signaling the UR3 arm to pick up the box. Figure \ref{fig:3-vi} shows the complete pipeline for box detection in NI Vision Builder. Our pipeline consists of five main stages: Image Acquisition, Apply Filter, Define ROI, Edge Detection, and TCP Communication.
+
+\begin{figure} [!ht]
+    \centering
+    \includegraphics[width=\textwidth]{3-vi.png}
+    \captionsetup{justification=centering}
+    \caption{NI Vision Builder pipeline for box detection}
+    \label{fig:3-vi}
+\end{figure}
+
+The first step of our pipeline is to acquire the image. We then apply a filter by slicing the image in the luminance plane from the HSL color format. This results in a black and white image, which is more suitable for image processing and edge detection. Figure \ref{fig:4-both} shows the image captured by the camera on the left and the same image after filtering on the right.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4-left.png} % Replace with your image file
+        \caption{Image acquired by the camera}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4-right.png} % Replace with your image file
+        \caption{Image after applying the filter}
+    \end{subfigure}
+    \captionsetup{justification=centering}
+    \caption{Comparison of the original image (left) and the filtered image (right)}
+    \label{fig:4-both}
+\end{figure}
+
+For the third step, we define our ROI (Region of Interest) to be within the belt area. This serves two purposes: first, to prevent false edge detection outside the belt; and second, to reduce the size of the working image, thereby decreasing processing time. Figure \ref{fig:5-roi} shows our ROI, labeled in green on the image.
+
+\begin{figure} [!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{5-roi.png}
+    \captionsetup{justification=centering}
+    \caption{ROI used in our pipeline, labeled in green}
+    \label{fig:5-roi}
+\end{figure}
+
+\newpage
+The next step in our pipeline involves detecting the box. We achieve this by identifying each edge, top, bottom, left, and right, separately using the ‘’Find Straight Edge tool’’ in NI Vision Builder. For each edge, we configure the search direction from the outer region towards the inner part of the box and set the edge polarity to detect transitions from dark to bright. This configuration allows us to accurately locate the outer edges of the box. The tool provides output metrics, specifically the x and y coordinates of two points defining each detected edge. Figure \ref{fig:6-edges} shows an example of edges detected using Find Straight Edge tool. Finally, we transmit these results via TCP communication in the following format:
+
+\begin{center}
+    \begin{verbatim}
+        left_x1, left_y1, left_x2, left_y2 /
+        right_x1, right_y1, right_x2, right_y2 /
+        top_x1, top_y1, top_x2, top_y2 /
+        bottom_x1, bottom_y1, bottom_x2, bottom_y2 |
+    \end{verbatim}
+\end{center}
+
+\begin{figure} [!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{6-edges.png}
+    \captionsetup{justification=centering}
+    \caption{Four edges of the box detected, labeled in red}
+    \label{fig:6-edges}
+\end{figure}
+
 \newpage
 \section{UR3 Arm}
-In this project, we utilize the UR3 robotic arm, a compact, six-degree-of-freedom (6-DOF) collaborative robot known for its precision, flexibility, and ease of integration. The UR3 offers $360^\circ$ rotation on all wrist joints and unlimited rotation on the end joint, providing high flexibility in confined workspaces. We employ the UR3 to perform reliable and safe object grasping in dynamic environments. By leveraging its programmable joint movements and end-effector control, the UR3 can accurately approach, align with, and grasp a variety of target objects. It is controlled via a custom robot class that simplifies programming through high-level commands, which will be explained in more detail in the integration section.
+In this project, we utilize the UR3 robotic arm. The UR3 is a compact, 6-degree-of-freedom collaborative robot known for its precision, flexibility, and ease of integration. The UR3 offers $360^\circ$ rotation on all wrist joints and infinite rotation on the end joint, enabling high flexibility in confined workspaces. We employ the UR3 for reliable and safe object grasping in dynamic environments. By leveraging its programmable joint movements and end-effector control, the UR3 is capable of accurately approaching, aligning with, and grasping a variety of target objects. The UR3 is controlled via a custom robot class that simplifies programming through high-level commands, which will be explained in more detail in the integration section.
 
 \begin{figure} [!ht]
     \centering
@@ -176,10 +241,35 @@ The choice of TCP over alternatives like UDP ensures reliable and correct data d
     \item \textbf{Data Reception and Parsing:} The system receives coordinate strings from the vision system in a custom format with sides delimited by "/" characters and coordinates by commas. This data provides the position of the box's left, right, top, and bottom edges.
     \item \textbf{Motion Analysis:} The software implements a simple but effective motion tracking algorithm that:
     \begin{itemize}
-        \item Records the initial y-position when a box is first detected
-        \item Calculates the change in position across frames to determine velocity
-        \item Converts pixel measurements to physical distances using a calibration constant (0.2 meters across the frame)
+        \item First, record the initial y-position when a box is first detected. Next, calculate the change in position between successive frames and save these values in a list (see Fig. \ref{fig:7-diff}).       
+        \item After a predetermined number of frames, compute the average change across all frames. Then convert the pixel displacements to physical distances using a calibration constant of 0.2 m per frame, and calculate the resulting speed in meters per second (see Fig. \ref{fig:8-yspeed}).
+        \item Finally, use the obtained speed to determine the grab-offset position via \begin{math} s=v*t \end{math}, as shown in Fig. \ref{fig:9-calc}.
     \end{itemize}
+
+\begin{figure} [!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{7-diff.png}
+    \captionsetup{justification=centering}
+    \caption{\textit{Code to calculate y difference in each frame}}
+    \label{fig:7-diff}
+\end{figure}
+
+\begin{figure} [!ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{8-yspeed.png}
+    \captionsetup{justification=centering}
+    \caption{\textit{Code to calculate y speed}}
+    \label{fig:8-yspeed}
+\end{figure}
+
+\begin{figure} [!ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{9-calc.png}
+    \captionsetup{justification=centering}
+    \caption{\textit{Code to calculate offset to grab}}
+    \label{fig:9-calc}
+\end{figure}
+\newpage
     \item \textbf{Position Estimation:} The system calculates where to position the gripper by:
     \begin{itemize}
         \item Determining the center point between the left and right edges of the box
@@ -240,7 +330,8 @@ Several performance optimizations are evident in the implementation:
 The integration balances complexity with reliability, creating a system capable of precisely timing robotic movements to intercept moving objects on a conveyor belt—a challenging task that requires precise coordination between vision, robot control, and motion prediction.
 
 \newpage
-\section{Conclusion}
+\section{Results \& Conclusion}
+This project successfully demonstrated the effective integration of robotics and computer vision to demonstrate the efficient \& quick pick of a box. Utilizing the UR3 robotic arm and NI Vision Builder, the system reliably detected, tracked, and manipulated moving boxes on a conveyor belt through precise synchronization of hardware and software components. The employment of TCP/IP communication protocols facilitated accurate real-time data exchange. The custom-developed Python control logic, incorporating predictive positioning and adaptive adjustments, effectively compensated for system delays. As a result, our team achieved the fastest pick-up time among all groups, 2.7 seconds from the moment the box was placed on the conveyor to returning to the home position, highlighting the efficiency of our system.
 
 \newpage
 \addcontentsline{toc}{section}{References}

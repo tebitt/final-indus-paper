@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.2)  25 APR 2025 14:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.2)  2 MAY 2025 17:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -300,14 +300,20 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip58
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count293
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count294
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count293
-\Gm@cntv=\count294
-\c@Gm@tempcnt=\count295
+\Gm@cnth=\count295
+\Gm@cntv=\count296
+\c@Gm@tempcnt=\count297
 \Gm@bindingoffset=\dimen184
 \Gm@wd@mp=\dimen185
 \Gm@odd@mp=\dimen186
@@ -319,41 +325,41 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@dimlist=\toks26
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count296
+\l__color_backend_stack_int=\count298
 \l__pdf_internal_box=\box56
 ) (./indus-final-report.aux)
 \openout1 = `indus-final-report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count297
+\scratchcounter=\count299
 \scratchdimen=\dimen192
 \scratchbox=\box57
-\nofMPsegments=\count298
-\nofMParguments=\count299
+\nofMPsegments=\count300
+\nofMParguments=\count301
 \everyMPshowfont=\toks27
-\MPscratchCnt=\count300
+\MPscratchCnt=\count302
 \MPscratchDim=\dimen193
-\MPnumerator=\count301
-\makeMPintoPDFobject=\count302
+\MPnumerator=\count303
+\makeMPintoPDFobject=\count304
 \everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -364,7 +370,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 28.
  (./indus-final-report.out) (./indus-final-report.out)
 \@outlinefile=\write3
 \openout3 = `indus-final-report.out'.
@@ -407,15 +413,15 @@ Package hyperref Info: Link coloring OFF on input line 27.
 <images/0-ise-logo.png, id=63, 8009.925pt x 1006.76125pt>
 File: images/0-ise-logo.png Graphic file (type png)
 <use images/0-ise-logo.png>
-Package pdftex.def Info: images/0-ise-logo.png  used on input line 31.
+Package pdftex.def Info: images/0-ise-logo.png  used on input line 32.
 (pdftex.def)             Requested size: 483.69687pt x 60.78711pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
 []\OT1/cmr/bx/n/14.4 Abstract|
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []\OT1/cmr/bx/n/14.4 Keyword|
  []
 
@@ -437,40 +443,88 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.61 \newpage
-              [1] [2] [3]
-<images/1-tcp.png, id=105, 497.86pt x 377.41pt>
+l.66 \newpage
+              [1] [2]
+<images/1-tcp.png, id=101, 497.86pt x 377.41pt>
 File: images/1-tcp.png Graphic file (type png)
 <use images/1-tcp.png>
-Package pdftex.def Info: images/1-tcp.png  used on input line 106.
+Package pdftex.def Info: images/1-tcp.png  used on input line 111.
 (pdftex.def)             Requested size: 483.69687pt x 366.6804pt.
- [4 <./images/1-tcp.png>] [5]
-<images/2-arm.jpg, id=117, 390.41512pt x 432.04892pt>
+ [3 <./images/1-tcp.png>]
+<images/3-vi.png, id=111, 1130.2225pt x 453.695pt>
+File: images/3-vi.png Graphic file (type png)
+<use images/3-vi.png>
+Package pdftex.def Info: images/3-vi.png  used on input line 125.
+(pdftex.def)             Requested size: 483.69687pt x 194.1643pt.
+<images/4-left.png, id=113, 371.3875pt x 368.37625pt>
+File: images/4-left.png Graphic file (type png)
+<use images/4-left.png>
+Package pdftex.def Info: images/4-left.png  used on input line 137.
+(pdftex.def)             Requested size: 217.66211pt x 215.90112pt.
+<images/4-right.png, id=114, 377.41pt x 375.4025pt>
+File: images/4-right.png Graphic file (type png)
+<use images/4-right.png>
+Package pdftex.def Info: images/4-right.png  used on input line 143.
+(pdftex.def)             Requested size: 217.66211pt x 216.50204pt.
+<images/5-roi.png, id=116, 400.49625pt x 400.49625pt>
+File: images/5-roi.png Graphic file (type png)
+<use images/5-roi.png>
+Package pdftex.def Info: images/5-roi.png  used on input line 155.
+(pdftex.def)             Requested size: 241.84843pt x 241.8518pt.
+ [4 <./images/3-vi.png> <./images/4-left.png> <./images/4-right.png>]
+<images/6-edges.png, id=130, 349.305pt x 346.29375pt>
+File: images/6-edges.png Graphic file (type png)
+<use images/6-edges.png>
+Package pdftex.def Info: images/6-edges.png  used on input line 175.
+(pdftex.def)             Requested size: 241.84843pt x 239.76724pt.
+ [5 <./images/5-roi.png> <./images/6-edges.png>]
+<images/2-arm.jpg, id=139, 390.41512pt x 432.04892pt>
 File: images/2-arm.jpg Graphic file (type jpg)
 <use images/2-arm.jpg>
-Package pdftex.def Info: images/2-arm.jpg  used on input line 122.
+Package pdftex.def Info: images/2-arm.jpg  used on input line 187.
 (pdftex.def)             Requested size: 193.47578pt x 214.11209pt.
- [6 <./images/2-arm.jpg>] [7{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [8] [9] (./indus-final-report.bbl) [10] (./indus-final-report.aux)
+ [6 <./images/2-arm.jpg>]
+<images/7-diff.png, id=156, 726.715pt x 206.7725pt>
+File: images/7-diff.png Graphic file (type png)
+<use images/7-diff.png>
+Package pdftex.def Info: images/7-diff.png  used on input line 251.
+(pdftex.def)             Requested size: 241.84843pt x 68.81252pt.
+<images/8-yspeed.png, id=157, 952.55875pt x 433.62pt>
+File: images/8-yspeed.png Graphic file (type png)
+<use images/8-yspeed.png>
+Package pdftex.def Info: images/8-yspeed.png  used on input line 259.
+(pdftex.def)             Requested size: 435.32422pt x 198.17078pt.
+<images/9-calc.png, id=158, 1668.2325pt x 131.49126pt>
+File: images/9-calc.png Graphic file (type png)
+<use images/9-calc.png>
+Package pdftex.def Info: images/9-calc.png  used on input line 267.
+(pdftex.def)             Requested size: 435.32422pt x 34.31131pt.
+ [7{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./images/7-diff.png>] [8 <./images/8-yspeed.png> <./images/9-calc.png>] [9] [10] (./indus-final-report.bbl
+Underfull \hbox (badness 2080) in paragraph at lines 25--27
+[]\OT1/cmr/m/n/10 N. In-stru-ments, \OT1/cmr/m/it/10 Vi-sion Builder for Au-to-mated In-spec-tion\OT1/cmr/m/n/10 , 2024, []$https : / / www . ni . com / en / support /
+ []
+
+) [11] (./indus-final-report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `indus-final-report.out' has not changed.
-(rerunfilecheck)             Checksum: 5CECBDF594A2F107CFF69C11A6A14193;2216.
+(rerunfilecheck)             Checksum: 7E264BB3B7F88DA77E54C46B4547F9C9;2275.
  ) 
 Here is how much of TeX's memory you used:
- 12463 strings out of 474116
- 194485 string characters out of 5743683
- 1939187 words of memory out of 5000000
- 34636 multiletter control sequences out of 15000+600000
- 562920 words of font info for 54 fonts, out of 8000000 for 9000
+ 12673 strings out of 474116
+ 198642 string characters out of 5743683
+ 1937187 words of memory out of 5000000
+ 34833 multiletter control sequences out of 15000+600000
+ 563387 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,803b,602s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on indus-final-report.pdf (11 pages, 510841 bytes).
+ 75i,12n,79p,965b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on indus-final-report.pdf (12 pages, 1559246 bytes).
 PDF statistics:
- 217 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 268 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
